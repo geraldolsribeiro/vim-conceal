@@ -16,17 +16,19 @@ syntax keyword cppOperator sum conceal cchar=∑
 syntax keyword cppStatement lambda conceal cchar=λ
 syntax keyword cppConstant M_PI conceal cchar=π
 
-syntax keyword cppKeyword bool conceal cchar=ð¹
-syntax keyword cppKeyword int conceal cchar=ℤ
-syntax keyword cppKeyword double conceal cchar=ð»
+syntax keyword cppKeyword bool conceal cchar=𝔹
+syntax keyword cppKeyword double conceal cchar=𝔻
+syntax keyword cppKeyword float conceal cchar=𝔽
 syntax keyword cppKeyword complex conceal cchar=ℂ
-syntax keyword cppKeyword true conceal cchar=ð
-syntax keyword cppKeyword false conceal cchar=ð
-syntax match cppKeyword "\<std::string\>" conceal cchar=ð
-syntax match cppOperator "<-" conceal cchar=← 
-syntax match cppOperator "->" conceal cchar=→ 
-syntax match cppOperator "=>" conceal cchar=⇒ 
-syntax match cppOperator "\:\:" conceal cchar=∷ 
+syntax keyword cppKeyword true conceal cchar=𝐓
+syntax keyword cppKeyword false conceal cchar=𝐅
+syntax keyword cppKeyword uint32_t conceal cchar=ℕ
+syntax keyword cppKeyword int32_t conceal cchar=ℤ
+syntax match cppKeyword "\<std::string\>" conceal cchar=𝕊
+syntax match cppOperator "<-" conceal cchar=←
+syntax match cppOperator "->" conceal cchar=→
+syntax match cppOperator "=>" conceal cchar=⇒
+syntax match cppOperator "\:\:" conceal cchar=∷
 
 hi link cppOperator Operator
 hi link cppStatement Statement
@@ -56,10 +58,10 @@ setlocal conceallevel=1
 "
 "'q' option to disable concealing of scientific constants (e.g. π)
 "'℘' option to disable concealing of powerset function
-"'ð' option to disable String type to ð concealing
-"'ð' option to disable Text type to ð concealing
-"'ð' option to disable Either/Right/Left to ð/ð/ð¿ concealing
-"'ð' option to disable Maybe/Just/Nothing to ð/ð½/ð concealing
+"'𝐒' option to disable String type to 𝐒 concealing
+"'𝐓' option to disable Text type to 𝐓 concealing
+"'𝐄' option to disable Either/Right/Left to 𝐄/𝑅/𝐿 concealing
+"'𝐌' option to disable Maybe/Just/Nothing to 𝐌/𝐽/𝑁 concealing
 "'A' option to not try to preserve indentation
 "'s' option to disable space consumption after ∑,∏,√ and ¬ functions
 "'*' option to enable concealing of asterisk with '⋅' sign
@@ -81,12 +83,12 @@ setlocal conceallevel=1
 "'I' option to enable alternative ':+' concealing with with ⨢
 "'i' option to disable default concealing of ':+' with ⅈ
 "'R' option to disable realPart/imagPart concealing with ℜ/ℑ
-"'T' option to enable True/False constants concealing with bold ð/ð
-"'t' option to disable True/False constants concealing with italic ð/ð¹
-"'B' option to disable Bool type to ð¹ concealing
+"'T' option to enable True/False constants concealing with bold 𝐓/𝐅
+"'t' option to disable True/False constants concealing with italic 𝑇/𝐹
+"'B' option to disable Bool type to 𝔹 concealing
 "'Q' option to disable Rational type to ℚ concealing
 "'Z' option to disable Integer type to ℤ concealing
-"'D' option to disable Double type to ð» concealing
+"'D' option to disable Double type to 𝔻 concealing
 "'C' option to disable Complex type to ℂ concealing
 "'1' option to disable numeric superscripts concealing, e.g. x²
 "'a' option to disable alphabet superscripts concealing, e.g. xⁿ
