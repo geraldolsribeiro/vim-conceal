@@ -16,19 +16,19 @@ syntax keyword cppOperator sum conceal cchar=∑
 syntax keyword cppStatement lambda conceal cchar=λ
 syntax keyword cppConstant M_PI conceal cchar=π
 
-syntax keyword cppKeyword bool conceal cchar=𝔹
-syntax keyword cppKeyword double conceal cchar=𝔻
-syntax keyword cppKeyword float conceal cchar=𝔽
-syntax keyword cppKeyword complex conceal cchar=ℂ
-syntax keyword cppKeyword true conceal cchar=𝐓
-syntax keyword cppKeyword false conceal cchar=𝐅
+syntax keyword cppKeyword bool     conceal cchar=𝔹
+syntax keyword cppKeyword double   conceal cchar=𝔻
+syntax keyword cppKeyword float    conceal cchar=𝔽
+syntax keyword cppKeyword complex  conceal cchar=ℂ
+syntax keyword cppKeyword true     conceal cchar=𝐓
+syntax keyword cppKeyword false    conceal cchar=𝐅
 syntax keyword cppKeyword uint32_t conceal cchar=ℕ
-syntax keyword cppKeyword int32_t conceal cchar=ℤ
+syntax keyword cppKeyword int32_t  conceal cchar=ℤ
 syntax match cppKeyword "\<std::string\>" conceal cchar=𝕊
-syntax match cppOperator "<-" conceal cchar=←
-syntax match cppOperator "->" conceal cchar=→
-syntax match cppOperator "=>" conceal cchar=⇒
-syntax match cppOperator "\:\:" conceal cchar=∷
+syntax match cppOperator "<-"      conceal cchar=←
+syntax match cppOperator "->"      conceal cchar=→
+syntax match cppOperator "=>"      conceal cchar=⇒
+syntax match cppOperator "\:\:"    conceal cchar=∷
 
 hi link cppOperator Operator
 hi link cppStatement Statement
@@ -36,7 +36,32 @@ hi link cppKeyword Keyword
 hi link cppConstant Operator
 hi! link conceal Operator
 
-
+" Na font fira code
+" U2326 ⌦
+" U2327 ⌧
+" U232B ⌫
+" U2302 ⌂
+" U2310 ⌐
+" U23CE ⏎
+" U2192 →
+" U2206 ∆
+" U221A √
+" U221E ∞
+" U2211 ∑
+" U222B ∫
+" U2202 ∂
+" U2260 ≠
+" U2264 ≤
+" U2265 ≥
+" U2209 ∩
+" U2610 ☐
+" U2611 ☑
+" U2612 ☒
+" U2713 ✓
+" U27A1 ➡
+" U2573 ╳
+" U27E8 ⟨
+" U27E9 ⟩
 
 setlocal conceallevel=1
 
