@@ -2,39 +2,66 @@ if exists('g:no_vim_conceal') || !has('conceal') || &enc != 'utf-8'
   finish
 endif
 
+" FIXME: Dar uma olhada em https://github.com/enomsg/vim-haskellConcealPlus/blob/master/after/syntax/haskell.vim
+
 " comparators
-syntax match cppOperator "<=" conceal cchar=≤
-syntax match cppOperator ">=" conceal cchar=≥
-syntax match cppOperator "!=" conceal cchar=≠
+" syntax match cppOperator "<=" conceal cchar=≤
+" syntax match cppOperator ">=" conceal cchar=≥
+" syntax match cppOperator "!=" conceal cchar=≠
 
 " math related
-syntax match cppOperator " / " conceal cchar=÷
-syntax match cppOperator " \* " conceal cchar=×
+" syntax match cppOperator " / " conceal cchar=÷
+" syntax match cppOperator " \* " conceal cchar=×
 
 " keywords
-syntax keyword cppOperator sum conceal cchar=∑
+syntax keyword cppOperator sum     conceal cchar=∑
 syntax keyword cppStatement lambda conceal cchar=λ
-syntax keyword cppConstant M_PI conceal cchar=π
+syntax keyword cppConstant M_PI    conceal cchar=π
 
-syntax keyword cppKeyword bool     conceal cchar=𝔹
+"syntax keyword cppKeyword bool     conceal cchar=𝔹
+" syntax keyword cppKeyword double   conceal cchar=𝔻
+" syntax keyword cppKeyword float    conceal cchar=𝔽
+" syntax keyword cppKeyword complex  conceal cchar=ℂ
+" syntax keyword cppKeyword true     conceal cchar=𝐓
+" syntax keyword cppKeyword false    conceal cchar=𝐅
+" syntax keyword cppKeyword uint32_t conceal cchar=ℕ
+" syntax keyword cppKeyword int32_t  conceal cchar=ℤ
+
+syntax keyword cppKeyword bool     conceal cchar=🅱️
 syntax keyword cppKeyword double   conceal cchar=𝔻
 syntax keyword cppKeyword float    conceal cchar=𝔽
 syntax keyword cppKeyword complex  conceal cchar=ℂ
-syntax keyword cppKeyword true     conceal cchar=𝐓
-syntax keyword cppKeyword false    conceal cchar=𝐅
+syntax keyword cppKeyword true     conceal cchar=✅
+syntax keyword cppKeyword false    conceal cchar=⭕
 syntax keyword cppKeyword uint32_t conceal cchar=ℕ
 syntax keyword cppKeyword int32_t  conceal cchar=ℤ
-syntax match cppKeyword "\<std::string\>" conceal cchar=𝕊
-syntax match cppOperator "<-"      conceal cchar=←
-syntax match cppOperator "->"      conceal cchar=→
-syntax match cppOperator "=>"      conceal cchar=⇒
-syntax match cppOperator "\:\:"    conceal cchar=∷
 
-hi link cppOperator Operator
-hi link cppStatement Statement
-hi link cppKeyword Keyword
-hi link cppConstant Operator
-hi! link conceal Operator
+" syntax match cppKeyword "\<std::string\>" conceal cchar=𝕊
+" syntax match cppOperator "<-"      conceal cchar=←
+" syntax match cppOperator "->"      conceal cchar=→
+" syntax match cppOperator "=>"      conceal cchar=⇒
+" syntax match cppOperator "\:\:"    conceal cchar=∷
+"
+syntax match cppOperator "->" conceal cchar=➡
+syntax match cppOperator "\:\:" conceal cchar=📦
+syntax match cppOperator "!" conceal cchar=❗
+syntax match cppOperator "!=" conceal cchar=🚫
+syntax match cppOperator "\.empty()" conceal cchar=🌀
+syntax match cppOperator " string " conceal cchar=🔤
+syntax match cppOperator " const string " conceal cchar=🔡
+syntax match cppOperator " auto " conceal cchar=💡
+syntax match cppOperator " \[\[maybe_unused\]\] " conceal cchar=💥
+syntax match cppOperator "\.key()" conceal cchar=💠 "🔑
+"
+" syn match ArrowHead contained ">" conceal cchar=→
+" syn match ArrowTail contained "-" conceal cchar=—
+" syn match ArrowFull "->" contains=ArrowHead,ArrowTail
+
+" hi link cppOperator Operator
+" hi link cppStatement Statement
+" hi link cppKeyword Keyword
+" hi link cppConstant Operator
+" hi! link conceal Operator
 
 " Na font fira code
 " U2326 ⌦
@@ -63,7 +90,14 @@ hi! link conceal Operator
 " U27E8 ⟨
 " U27E9 ⟩
 
-setlocal conceallevel=1
+
+" FIXME: Criar uma seção sobre conceal
+"https://alok.github.io/2018/04/26/using-vim-s-conceal-to-make-languages-more-tolerable/#:~:text=Vim%20(and%20Emacs)%20have%20features,line%2C%20the%20conceal%20goes%20away.&text=It's%20really%20easy%20to%20abuse,but%20you%2C%20unlike%20code%20formatting.
+" https://github.com/pangloss/vim-javascript
+"
+
+" 0 Desabilita
+setlocal conceallevel=2
 
 
 "Mathematical ExpressionC++ SymbolDecimal Representation
@@ -118,3 +152,47 @@ setlocal conceallevel=1
 "'1' option to disable numeric superscripts concealing, e.g. x²
 "'a' option to disable alphabet superscripts concealing, e.g. xⁿ
 "
+" "==          | ≝
+" !=          | ≠
+" <=          | ≤
+" >=          | ≥
+"
+" and, &&     | ∧
+" or, ||      | ∨
+" not, !      | ¬
+"
+" None        | ∅
+" true, false | ⊤, ⊥ (top and bottom from logic)
+"
+" for         | ∀
+" in          | ∈
+" not in      | ∉
+"
+" =           | ← (to remind me that equality is really assignment)
+" ->          | → (that's an arrow replaced by a better arrow)
+"
+" assert      | ‼
+" let g:javascript_conceal_function             = ƒ
+" let g:javascript_conceal_null                 = ø
+" let g:javascript_conceal_this                 = @
+" let g:javascript_conceal_return               = ⇚
+" let g:javascript_conceal_undefined            = ¿
+" let g:javascript_conceal_NaN                  = ℕ
+" let g:javascript_conceal_prototype            = ¶
+" let g:javascript_conceal_static               = •
+" let g:javascript_conceal_super                = Ω
+" let g:javascript_conceal_arrow_function       = ⇒
+" let g:javascript_conceal_noarg_arrow_function = 🞅
+" let g:javascript_conceal_underscore_arrow_function = 🞅
+"
+" bool        | 𝔹
+" char        | ∁
+" string, str | 𝐒
+"
+" unsigned    | ℕ
+" int         | ℤ
+" float       | ℝ
+" complex     | ℂ
+"
+" vector      | V
+" tensor      | 𝕋
