@@ -43,15 +43,24 @@ syntax keyword cppKeyword int32_t  conceal cchar=ℤ
 " syntax match cppOperator "\:\:"    conceal cchar=∷
 "
 syntax match cppOperator "->" conceal cchar=➡
-syntax match cppOperator "\:\:" conceal cchar=📦
+syntax match cppOperator "\:\:" conceal cchar=➖
 syntax match cppOperator "!" conceal cchar=❗
 syntax match cppOperator "!=" conceal cchar=🚫
-syntax match cppOperator "\.empty()" conceal cchar=🌀
-syntax match cppOperator " string " conceal cchar=🔤
-syntax match cppOperator " const string " conceal cchar=🔡
-syntax match cppOperator " auto " conceal cchar=💡
-syntax match cppOperator " \[\[maybe_unused\]\] " conceal cchar=💥
-syntax match cppOperator "\.key()" conceal cchar=💠 "🔑
+"syntax match cppOperator "\.empty()" conceal cchar=🌀
+syntax match cppOperator "\.empty()" conceal cchar=⚫
+syntax match cppOperator " string \+" conceal cchar=🔤
+"syntax match cppOperator "const string" conceal cchar=🔡
+syntax match cppOperator " const\>" conceal cchar=🔒
+syntax match cppOperator " auto \+" conceal cchar=🔹
+syntax match cppOperator " const auto \+" conceal cchar=🔸
+syntax match cppOperator " \[\[maybe_unused\]\] " conceal cchar=🙈
+syntax match cppOperator "\.key()" conceal cchar=🆔
+syntax match cppOperator "\.find" conceal cchar=🔎
+syntax match cppOperator "\.end()" conceal cchar=👉
+syntax match cppOperator "\.begin()" conceal cchar=👈
+syntax match cppOperator " return\(;\)\?" conceal cchar=⬅
+
+" 💥 💠 🔑  📦 
 "
 " syn match ArrowHead contained ">" conceal cchar=→
 " syn match ArrowTail contained "-" conceal cchar=—
