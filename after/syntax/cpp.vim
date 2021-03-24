@@ -35,6 +35,13 @@ syntax keyword cppKeyword true     conceal cchar=✅
 syntax keyword cppKeyword false    conceal cchar=⭕
 syntax keyword cppKeyword uint32_t conceal cchar=ℕ
 syntax keyword cppKeyword int32_t  conceal cchar=ℤ
+syntax keyword cppKeyword const    conceal cchar=🔒
+syntax keyword cppKeyword auto     conceal cchar=🔹
+
+"syntax keyword cppKeyword string   conceal cchar=🔤
+syntax match cppOperator " optional" conceal cchar=❓
+syntax match cppOperator " string " conceal cchar=🔤
+syntax match cppOperator "\(<\)\?string\(>\)\?" conceal cchar=🔤
 
 " syntax match cppKeyword "\<std::string\>" conceal cchar=𝕊
 " syntax match cppOperator "<-"      conceal cchar=←
@@ -48,17 +55,15 @@ syntax match cppOperator "!" conceal cchar=❗
 syntax match cppOperator "!=" conceal cchar=🚫
 "syntax match cppOperator "\.empty()" conceal cchar=🌀
 syntax match cppOperator "\.empty()" conceal cchar=⚫
-syntax match cppOperator " string \+" conceal cchar=🔤
 "syntax match cppOperator "const string" conceal cchar=🔡
-syntax match cppOperator " const\>" conceal cchar=🔒
-syntax match cppOperator " auto \+" conceal cchar=🔹
 syntax match cppOperator " const auto \+" conceal cchar=🔸
 syntax match cppOperator " \[\[maybe_unused\]\] " conceal cchar=🙈
 syntax match cppOperator "\.key()" conceal cchar=🆔
 syntax match cppOperator "\.find" conceal cchar=🔎
 syntax match cppOperator "\.end()" conceal cchar=👉
+syntax match cppOperator "\.count" conceal cchar=∑
 syntax match cppOperator "\.begin()" conceal cchar=👈
-syntax match cppOperator " return\(;\)\?" conceal cchar=⬅
+syntax match cppOperator " return\>\(;\)\?" conceal cchar=⬅
 
 " 💥 💠 🔑  📦 
 "
